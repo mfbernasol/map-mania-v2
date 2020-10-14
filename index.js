@@ -7,20 +7,19 @@ const myLatLng = {lat: 41.878113,lng: -87.629799};
     center: { lat: 41.878113, lng: -87.629799},
     zoom: 5,
   });
-
-
-
-
-map.addListener('drag', function() {
-    console.log(map.getBounds());
-    console.log(map.getBounds().contains(Latlng));
-    console.log(map.getZoom());
+  map.addListener("click", (e) => {
+    placeMarkerAndPanTo(e.latLng, map);
+    console.log(e);
   });
 
-  new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: "Hello World!",
-  });
+
+
 }
 
+function placeMarkerAndPanTo(latLng, map) {
+    new google.maps.Marker({
+      position: latLng,
+      map: map,
+    });
+    map.panTo(latLng);
+}
