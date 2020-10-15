@@ -1,3 +1,4 @@
+ 
 let map;
 
 function initMap() {
@@ -7,8 +8,8 @@ const myLatLng = {lat: 41.878113,lng: -87.629799};
     center: { lat: 41.878113, lng: -87.629799},
     zoom: 5,
   });
-  map.addListener("click", (e) => {
-    placeMarkerAndPanTo(e.latLng, map);
+  map.addListener("click", function(e) {
+    addMarker(e.latLng);
     console.log(e);
   });
 
@@ -16,10 +17,21 @@ const myLatLng = {lat: 41.878113,lng: -87.629799};
 
 }
 
-function placeMarkerAndPanTo(latLng, map) {
-    new google.maps.Marker({
+function addMarker(latLng) {
+  var marker = new google.maps.Marker({
       position: latLng,
       map: map,
     });
-    map.panTo(latLng);
+  
+  var infoWindow = new google.maps.InfoWindow({
+  });
+
+  infoWindow.setContent(
+    JSON.stringify(latLng.toJSON(),null,2)
+  );
+  
+  marker.addListener('click',function(mapsMouseEvent){
+    infoWindow.open(map,marker);
+  });
+
 }
