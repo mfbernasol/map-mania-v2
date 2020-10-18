@@ -37,8 +37,8 @@ var favPlaces = [
   },
   {
     content: "Sydney",
-    coords: { lat: -33.86882, lng: -151.20929 },
-  },
+    coords: { lat: -33.86882, lng: 151.209900},
+  }
 ];
 
 // array of hints, contains only 9, first hint will be an alert
@@ -134,9 +134,8 @@ function checkPlace() {
     giveHint(hints[8]);
     giveScore(total+80);
   }else if(map.getBounds().contains({lat: favPlaces[9].coords.lat,lng: favPlaces[9].coords.lng}) && map.getZoom() >= 7){
-    giveHint(hints[9]);
+    document.getElementById('hint').value= "You win! Thanks for playing!"
     giveScore(total+90);
-    alert("You win!")
   }
 
 
