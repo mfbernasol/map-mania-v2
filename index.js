@@ -58,7 +58,7 @@ var locIndex = 0;
 var currentLoc = favPlaces[locIndex];
 
 function initMap() {
-  alert("first hint")
+  // alert("first hint")
   const myLatLng = { lat: 41.878113, lng: -87.629799 };
 
   map = new google.maps.Map(document.getElementById("map"), {
@@ -84,7 +84,10 @@ function initMap() {
     // console.log("zoom level: " + map.getZoom());
   });
 
- 
+ document.getElementById('cheat').addEventListener('click',function(){
+  cheatButton();
+  });
+  
 }
 
 //initializes markers
@@ -140,6 +143,12 @@ function checkPlace() {
 
 
 }
+
+function cheatButton(){
+  document.getElementById('score').value = 100;
+  alert("Took the easy way out!");
+}
+
 
 //Count Score
 function giveScore(score){
