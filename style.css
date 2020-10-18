@@ -6,3 +6,7 @@
 body {
   text-align: center;
 }
+
+#hint {
+  width: 250px;
+}
