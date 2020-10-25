@@ -60,6 +60,7 @@ var currentLoc = favPlaces[locIndex];
 function initMap() {
   window.confirm("Getting Started: To play follow the hints and zoom in the location to score points");
   window.confirm("Your first hint: Hollywood is here");
+  window.confirm("Click the button if you wanna just win!");
   const myLatLng = { lat: 41.878113, lng: -87.629799 };
 
   map = new google.maps.Map(document.getElementById("map"), {
