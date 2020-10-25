@@ -58,7 +58,7 @@ var locIndex = 0;
 var currentLoc = favPlaces[locIndex];
 
 function initMap() {
-  // window.confirm("Getting Started: To play, just follow the hints and zoom in at level 7 or higher. If you wanna skip that, just click the button to win!");
+  window.confirm("Getting Started: To play, just follow the hints and zoom in at level 7 or higher. If you wanna skip that, just click the button to win!");
   window.confirm("Your first hint: Hollywood is here");
   const myLatLng = { lat: 41.878113, lng: -87.629799 };
 
